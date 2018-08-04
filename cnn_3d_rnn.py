@@ -131,7 +131,7 @@ if __name__ == "__main__":
         sess = tf.Session()
         sess.run(tf.global_variables_initializer())
       
-        ntotal = data_preparation(batch_size=batch_size)
+        ntotal = data_preparation(batch_size)
         
         teX = np.load('teX.npy')
         teY = np.load('teY.npy')

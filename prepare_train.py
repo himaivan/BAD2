@@ -16,7 +16,7 @@ seed(1)
 
 from bad_3d_2sec import prep_data1, prep_data2, prep_data3, prep_cv1, prep_cv2, prep_cv3
 
-def data_preparation(batch_size=batch_size):
+def data_preparation(batch_size):
    # training data
    featname = 'melspec'
    x_t1, tn1, Y_t1 = prep_data1(featname)

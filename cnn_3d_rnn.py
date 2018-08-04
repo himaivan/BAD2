@@ -47,7 +47,7 @@ def bias_variable(shape):
 
 gru_size = 32
 
-def RNN(X_in, _W, _b, _name):
+def RNN(X_in, _name):
 
     _H = X_in
     batch_size_T = tf.shape(_H)[0]
@@ -85,7 +85,7 @@ def model(x, w_fc1, b_fc1, keep_prob_conv, keep_prob_fc, isx):
     rnn_output = []
     for channel_index in range(h_conv3_drop.get_shape().as_list()[3]):
        name = "gru_"+str(channel_index)
-       hf = RNN(tf.transpose(h_conv3_features[channel_index], [0, 2, 1]), weights, biases, name)
+       hf = RNN(tf.transpose(h_conv3_features[channel_index], [0, 2, 1]), name)
 
        rnn_output.append(hf)
 

@@ -14,6 +14,10 @@ from sklearn import preprocessing
 from numpy.random import seed
 seed(1)
 
+nFrames = 5
+nFeatures = 80
+nTime = 200
+
 from bad_3d_2sec import prep_data1, prep_data2, prep_data3, prep_cv1, prep_cv2, prep_cv3
 
 def data_preparation(batch_size):

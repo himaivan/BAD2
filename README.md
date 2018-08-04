@@ -1,6 +1,8 @@
 # BAD2
 bird audio detection challenge 2
 
+Detail of the environment is in req.txt (generated using 'pip freeze')
+
 Basic usage:
 
 This version uses Matlab for feature extraction.

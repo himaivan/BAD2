@@ -26,7 +26,7 @@ def data_preparation(batch_size):
    # randomized the order
    x_train = np.vstack([x_t1,x_t2,x_t3])
    Y_train = np.vstack([Y_t1,Y_t2,Y_t3])
-   np.random.seed(seed)
+   np.random.seed(1)
 
    mytrain = np.asarray(x_train).reshape(-1, nFrames, nFeatures, nTime, 1)
 

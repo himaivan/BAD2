@@ -6,7 +6,7 @@ Detail of the environment is in req.txt (generated using 'pip freeze')
 
 Quick readme:
 
-This version uses Matlab for feature extraction.
+This version uses Matlab for feature extraction. The csv files are slightly modified (i.e., removing the header) to simplify the training/testing process.
 
 ./extracting_features.sh
 
@@ -30,13 +30,15 @@ Setting the Python environment
 
 1. Download and installing conda.
 download url: https://repo.continuum.io/miniconda/
-
+```bash
 bash Miniconda2-latest-Linux-x86_64.sh
-
+```
 2. Create virtual environment for python using conda.
+```
 ./miniconda2/bin/conda create -n bad2
 source activate bad2
 pip install tensorflow-gpu==1.4.1
+```
 
 Feature extraction process
 

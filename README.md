@@ -1,7 +1,7 @@
-# Copyright (c) 2018 Queensland University of Technology
-# Written by Ivan Himawan <i.himawan@qut.edu.au>,
-#
-# This repository contains 3D-CNN+RNN implementation for the second edition of bird audio detection challenge 2.
+Copyright (c) 2018 Queensland University of Technology
+Written by Ivan Himawan <i.himawan@qut.edu.au>,
+
+This repository contains 3D-CNN+RNN implementation for the second edition of bird audio detection challenge 2.
 
 Detail of the environment is in req.txt (generated using 'pip freeze')
 
@@ -25,9 +25,9 @@ python cnn_3d_rnn.py 999
 
 Average all results.
 
-# Readme:
+Readme:
 
-# Setting the Python environment
+Setting the Python environment
 
 1. Download and installing conda.
 download url: https://repo.continuum.io/miniconda/
@@ -39,13 +39,13 @@ bash Miniconda2-latest-Linux-x86_64.sh
 source activate bad2
 pip install tensorflow-gpu==1.4.1
 
-# Feature extraction process
+Feature extraction process
 
 This version of feature extraction process use Matlab scripts to compute spectrogram.
 ```bash
 ./extracting_features.sh
 ```
-# Information regarding model training
+Information regarding model training
 
 Tensorflow is used to implement the deep architectures. Require tensorflow (>=1.4.0) with GPU support.
 ``bash

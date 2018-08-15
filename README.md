@@ -1,8 +1,6 @@
-# Copyright (c) 2018 Queensland University of Technology
+Copyright (c) 2018 Queensland University of Technology, written by Ivan Himawan <i.himawan@qut.edu.au>
 
-written by Ivan Himawan <i.himawan@qut.edu.au>,
-
-This repository contains 3D-CNN+RNN implementation for the second edition of bird audio detection challenge 2.
+# This repository contains 3D-CNN+RNN implementation for the second edition of bird audio detection challenge 2.
 
 Detail of the environment is in req.txt (generated using 'pip freeze')
 

@@ -51,4 +51,4 @@ Tensorflow is used to implement the deep architectures. Require tensorflow (>=1.
 ``bash
 python cnn_3d_rnn.py 777
 ```
-# Model ensemble can be performed by running several instances of model training (i.e., using different seed), and average the predictions.
+Model ensemble can be performed by running several instances of model training (i.e., using different seed), and average the predictions.

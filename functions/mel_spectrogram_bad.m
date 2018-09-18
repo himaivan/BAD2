@@ -1,16 +1,8 @@
 function [feats] = mel_spectrogram_bad(X, fs)
 
-%clear; clc;
-
-%wavfile = 'rainwav/20150624_064556_19204.wav';
-%[X,fs] = audioread(wavfile); 
-
-%st = randi(fs*57);
-%X = X(st:st+fs*2);
-
 % CONSTANTS ===============================================================
-window_length = 20/1000; % 100 ms window
-D = window_length*fs; % samples_block (no samples per block) = L
+window_length = 20/1000;
+D = window_length*fs;
 L = 2^nextpow2(D);
 filter_length = L;
 SP = 0.5; % Overlap factor

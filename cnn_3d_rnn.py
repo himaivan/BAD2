@@ -108,7 +108,6 @@ if __name__ == "__main__":
     b_fc1 = bias_variable([2])
 
     p_keep_conv = tf.placeholder("float")
-    p_keep_hidden = tf.placeholder("float")
 
     py_x = model(X, w_fc1, b_fc1, p_keep_conv, isTrain)
     cost_softmax = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=py_x, labels=Y))

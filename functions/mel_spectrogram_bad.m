@@ -1,3 +1,7 @@
+%(c) 2018, Ivan Himawan, Queensland University of Technology.
+% Acknowledgement:
+% [1] M. Sahidullah, T. Kinnunen and C. Hanilci; "A comparison of features for synthetic speech detection"; Proc. Interspeech 2015, pp. 2087-2091, Dresden, Germany, September 2015.
+
 function [feats] = mel_spectrogram_bad(X, fs)
 
 % CONSTANTS ===============================================================

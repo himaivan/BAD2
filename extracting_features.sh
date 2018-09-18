@@ -25,8 +25,8 @@ echo $file_ls2
 echo $file_ls3
 
 matlab -r "featextract('$file_tr1')" -nojvm -nodisplay
-
-
+matlab -r "featextract('$file_tr2')" -nojvm -nodisplay
+matlab -r "featextract('$file_tr3')" -nojvm -nodisplay
 
 matlab -r "featextract('$file_ls1')" -nojvm -nodisplay
 matlab -r "featextract('$file_ls2')" -nojvm -nodisplay

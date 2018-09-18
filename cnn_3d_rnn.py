@@ -168,10 +168,10 @@ if __name__ == "__main__":
             saved_model_counter += 1
             cv_accs.append(test_accuracy)
             cv_loss.append(test_loss)
-        if not flags:
-           saver.save(sess, directory+'/model1'+'_'+str(init), global_step=saved_model_counter)
-           print("saved model %d: %f" % (saved_model_counter, test_accuracy))
-           saved_model_counter += 1
+        #if not flags:
+        #   saver.save(sess, directory+'/model1'+'_'+str(init), global_step=saved_model_counter)
+        #   print("saved model %d: %f" % (saved_model_counter, test_accuracy))
+        #   saved_model_counter += 1
         lfile.close()
     if testing:
         testidx = np.asarray(cv_accs).argsort()[-5:][::-1]

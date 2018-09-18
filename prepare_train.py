@@ -4,7 +4,6 @@ import sys
 import math
 import os
 import h5py
-import numpy as np
 import argparse
 from keras.utils import np_utils
 from random import randint
@@ -38,7 +37,7 @@ def data_preparation(batch_size):
    XX = [mytrain[i] for i in ord]
    YY = [Y_train[i] for i in ord]
 
-   num = int(round(len(mytrain)*0.97))
+   num = int(round(len(mytrain)*0.97)) # use approx. 97% of the training data.
    trX = np.asarray(XX[0:num])
    trY = YY[0:num]
    teX = np.asarray(XX[num:])

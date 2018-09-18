@@ -14,7 +14,6 @@ D = window_length*fs; % samples_block (no samples per block) = L
 L = 2^nextpow2(D);
 filter_length = L;
 SP = 0.5; % Overlap factor
-%inc = L - ceil(SP*L); % Number of advance samples
 No_Filter = 80;
 %==========================================================================
 

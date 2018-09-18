@@ -57,25 +57,25 @@ def RNN(X_in, _name):
 
     return _GRU_O[:,-1,:]
 
-def model(x, w_fc1, b_fc1, keep_prob_conv, keep_prob_fc, isx):
+def model(x, w_fc1, b_fc1, keep_prob_conv, isx):
 
     h_conv1 = tf.layers.conv3d(inputs=x, filters=8, kernel_size=[3,3,3], padding='SAME', use_bias=False, activation=None)
     h_conv1 = tf.layers.batch_normalization(inputs=h_conv1, training=isx)
     h_conv1 = tf.nn.relu(h_conv1)
     h_conv1_pool = tf.layers.max_pooling3d(inputs=h_conv1, pool_size=[1,2,2], strides=[1,2,2], padding='SAME')
-    h_conv1_drop = tf.layers.dropout(inputs=h_conv1_pool, rate=keep_prob_fc, training=isx)
+    h_conv1_drop = tf.layers.dropout(inputs=h_conv1_pool, rate=keep_prob_conv, training=isx)
     print(h_conv1_drop.get_shape())
     h_conv2 = tf.layers.conv3d(inputs=h_conv1_drop, filters=32, kernel_size=[3,3,3], padding='SAME', use_bias=False, activation=None)
     h_conv2 = tf.layers.batch_normalization(inputs=h_conv2, training=isx)
     h_conv2 = tf.nn.relu(h_conv2)
     h_conv2_pool = tf.layers.max_pooling3d(inputs=h_conv2, pool_size=[2,2,2], strides=2, padding='SAME')
-    h_conv2_drop = tf.layers.dropout(inputs=h_conv2_pool, rate=keep_prob_fc, training=isx)
+    h_conv2_drop = tf.layers.dropout(inputs=h_conv2_pool, rate=keep_prob_conv, training=isx)
     print(h_conv2_drop.get_shape())
     h_conv3 = tf.layers.conv3d(inputs=h_conv2_drop, filters=16, kernel_size=[3,3,3], padding='SAME', use_bias=False, activation=None)
     h_conv3 = tf.layers.batch_normalization(inputs=h_conv3, training=isx)
     h_conv3 = tf.nn.relu(h_conv3)
     h_conv3_pool = tf.layers.max_pooling3d(inputs=h_conv3, pool_size=[3,2,2], strides=[3,2,2], padding='SAME')
-    h_conv3_drop = tf.squeeze(tf.layers.dropout(inputs=h_conv3_pool, rate=keep_prob_fc, training=isx),1)
+    h_conv3_drop = tf.squeeze(tf.layers.dropout(inputs=h_conv3_pool, rate=keep_prob_conv, training=isx),1)
     print(h_conv3_drop)
     h_conv3_features = tf.unstack(h_conv3_drop, axis=3)
 
@@ -110,7 +110,7 @@ if __name__ == "__main__":
     p_keep_conv = tf.placeholder("float")
     p_keep_hidden = tf.placeholder("float")
 
-    py_x = model(X, w_fc1, b_fc1, p_keep_conv, p_keep_hidden, isTrain)
+    py_x = model(X, w_fc1, b_fc1, p_keep_conv, isTrain)
     cost_softmax = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=py_x, labels=Y))
 
     cost = cost_softmax
@@ -154,13 +154,13 @@ if __name__ == "__main__":
                 trainY = np.load(datadir+'/'+'mylabel.'+str(lnum[cc])+'.npy')
                 _, loss_iter = sess.run([train_op, cost_softmax],
                                         feed_dict={X: trainX, Y: trainY,
-                                                   p_keep_conv: 0.5, p_keep_hidden: 0.5, isTrain: True})
+                                                   p_keep_conv: 0.5, isTrain: True})
                 loss_epoch.append(loss_iter)
                 cc = cc + 1
             loss_func.append(np.mean(loss_epoch))
-            pred = sess.run(predict_op, feed_dict={X: teX, p_keep_conv: 1.0, p_keep_hidden: 1.0, isTrain: False})
+            pred = sess.run(predict_op, feed_dict={X: teX, p_keep_conv: 1.0, isTrain: False})
             test_accuracy = np.mean(np.argmax(teY, axis=1) == pred)
-            test_auc, test_loss = sess.run([auc, cost_softmax], feed_dict={X: teX, Y: teY, p_keep_conv: 1.0, p_keep_hidden: 1.0, isTrain: False})
+            test_auc, test_loss = sess.run([auc, cost_softmax], feed_dict={X: teX, Y: teY, p_keep_conv: 1.0, isTrain: False})
 
             print(i, loss_func[-1], test_accuracy, test_auc[1], test_loss)
             lfile.write("%s , %s , %s , %s, %s\n" % (str(i), str(loss_func[-1]), str(test_accuracy), str(test_auc[1]), str(test_loss)))
@@ -195,7 +195,7 @@ if __name__ == "__main__":
 
            logits = np.asarray([sess.run(py_x,
                                       feed_dict={X: testX[i, ][None, ], p_keep_conv: 1.0,
-                                                 p_keep_hidden: 1.0, isTrain: False})
+                                                    isTrain: False})
                              for i in range(len(testX))]).squeeze()
            probs = tf.nn.softmax(logits)
            test_probs = sess.run(probs)

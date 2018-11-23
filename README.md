@@ -8,12 +8,12 @@ Quick readme:
 
 This version uses Matlab for feature extraction. For this work, we used log Mel-spectrogram as features. Alternatively, you may used other python libraries, i.e., librosa for feature extraction if you have no access to Matlab.
 For example,
-
+```
 import librosa
 y,nsr = librosa.load(filename, sr=44100)
 C = librosa.feature.melspectrogram(y, sr=nsr, None, n_fft=1024, hop_length=512, power=1.0)
 C = librosa.core.amplitude_to_db(C)
-
+```
 The csv files are slightly modified (i.e., removing the header) to simplify the training/testing process.
 
 Running feature extraction:
@@ -100,5 +100,5 @@ See the License for the specific language governing permissions and
 limitations under the License.
 Please refer to LICENSE file for further detail.
 
-Contribution
+#Contribution
 We appreciate your kind feedback. Please try our code, and help us with code inspections to improve our work.

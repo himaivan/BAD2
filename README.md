@@ -26,7 +26,7 @@ Training with different initialization:
 ```
 python cnn_3d_rnn.py 777
 ```
-results would be in eval_final.csv
+results would be in eval_final_777.csv
 You may run with different seed that give random weights initialization,
 ```
 python cnn_3d_rnn.py 888
@@ -62,7 +62,7 @@ Tensorflow is used to implement the deep architectures. Require tensorflow (>=1.
 ```bash
 python cnn_3d_rnn.py 777
 ```
-Model ensemble can be performed by running several instances of model training (i.e., using different seed), and average the predictions.
+Model ensemble can be performed by running several instances of model training (i.e., using different seed values), and average the predictions.
 
 # Citation
 If you used this code please kindly cite the following paper:

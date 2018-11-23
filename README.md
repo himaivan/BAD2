@@ -11,7 +11,7 @@ For example,
 ```
 import librosa
 y,nsr = librosa.load(filename, sr=44100)
-C = librosa.feature.melspectrogram(y, sr=nsr, None, n_fft=1024, hop_length=512, power=1.0)
+C = librosa.feature.melspectrogram(y, sr=nsr, None, n_fft=1024, hop_length=512, power=2.0)
 C = librosa.core.amplitude_to_db(C)
 ```
 The csv files are slightly modified (i.e., removing the header) to simplify the training/testing process.

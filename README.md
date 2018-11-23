@@ -62,7 +62,7 @@ python cnn_3d_rnn.py 777
 ```
 Model ensemble can be performed by running several instances of model training (i.e., using different seed), and average the predictions.
 
-#Citation
+# Citation
 If you used this code please kindly cite the following paper:
 
 @InProceedings{himawan2018,
@@ -72,7 +72,7 @@ If you used this code please kindly cite the following paper:
   Year                     = {2018},
 }
 
-#License
+# License
 The license is as follows:
 
 APPENDIX: How to apply the Apache License to your work.
@@ -100,5 +100,5 @@ See the License for the specific language governing permissions and
 limitations under the License.
 Please refer to LICENSE file for further detail.
 
-#Contribution
+# Contribution
 We appreciate your kind feedback. Please try our code, and help us with code inspections to improve our work.

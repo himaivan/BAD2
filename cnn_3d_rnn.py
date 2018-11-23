@@ -205,7 +205,7 @@ if __name__ == "__main__":
            final_fnames.append(f)
 
         res = np.divide(total, 5)
-        with open(directory+'/eval_final.csv','w') as myfile:
+        with open(directory+'/eval_final'+str(seed)+'.csv','w') as myfile:
            for i in range(len(final_fnames)):
               myfile.write("%s,%f\n"%(final_fnames[i].split('.wav')[0], res[i]))
 

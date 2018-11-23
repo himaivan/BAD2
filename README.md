@@ -17,19 +17,21 @@ C = librosa.core.amplitude_to_db(C)
 The csv files are slightly modified (i.e., removing the header) to simplify the training/testing process.
 
 Running feature extraction:
+```
 ./extracting_features.sh
+```
 
 Tensorflow for training 3D-CNN+RNN models.
 Training with different initialization:
-
+```
 python cnn_3d_rnn.py 777
+```
 results would be in eval_final.csv
-
+You may run with different seed that give random weights initialization,
+```
 python cnn_3d_rnn.py 888
-
 python cnn_3d_rnn.py 999
-
-
+```
 Average all results.
 
 Readme:

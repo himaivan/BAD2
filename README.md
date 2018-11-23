@@ -6,7 +6,10 @@ Detail of the environment is in req.txt (generated using 'pip freeze')
 
 Quick readme:
 
-This version uses Matlab for feature extraction. The csv files are slightly modified (i.e., removing the header) to simplify the training/testing process.
+This version uses Matlab for feature extraction. For this work, we used log spectrogram as features. Alternatively, you may used other python libraries, i.e., librosa for feature extraction if you have no access to Matlab.
+The csv files are slightly modified (i.e., removing the header) to simplify the training/testing process.
+
+
 
 ./extracting_features.sh
 

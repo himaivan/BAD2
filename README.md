@@ -64,18 +64,18 @@ Model ensemble can be performed by running several instances of model training (
 
 # Citation
 If you used this code please kindly cite the following paper:
-
+```
 @InProceedings{himawan2018,
   Title                    = {3D convolution recurrent neural networks for bird sound detection},
   Author                   = {Himawan, Ivan and Towsey, Michael and Roe, Pau},
   Booktitle                = {Workshop on on Detection and Classification of Acoustic Scenes and Events},
   Year                     = {2018},
 }
-
+```
 # License
 To apply the Apache License to your work, attach the following boilerplate notice, with the fields enclosed by brackets "[]" replaced with your own identifying information. (Don't include the brackets!) The text should be enclosed in the appropriate comment syntax for the file format. We also recommend that a file or class name and description of purpose be included on the same "printed page" as the copyright notice for easier identification within third-party archives.
 ```
-Copyright [2018] [Ivan Himawan]
+Copyright [2018] [Ivan Himawan, Queensland University of Technology]
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

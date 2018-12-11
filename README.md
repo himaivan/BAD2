@@ -65,7 +65,7 @@ python cnn_3d_rnn.py 777
 Model ensemble can be performed by running several instances of model training (i.e., using different seed values), and average the predictions.
 
 # Citation
-If you used this code please kindly cite the following paper:
+If you used (and/or inspired by) this code please kindly cite the following paper:
 ```
 @InProceedings{himawan2018,
   Title                    = {3D convolution recurrent neural networks for bird sound detection},

@@ -6,8 +6,6 @@ blist==1.3.6
 blitz==0.3.3
 certifi==2017.7.27.1
 cffi==1.11.0
-chainer==3.0.0
--e git+https://github.com/chainer/chainercv@75b08463b7bd4c04fa05fe027612d021010c6e25#egg=chainercv
 chardet==3.0.4
 conda==4.3.16
 cryptography==1.4
